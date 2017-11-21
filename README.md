@@ -1,2 +1,2 @@
 # python-prototypes
-Modules, scripts, applications and prototypes.
+Applications, Modules, Scripts and Prototypes.
