@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Transforms string into a list in alphabetical order."""
+""" Transforms string into a list in alphabetical order. """
 
 import json
 
