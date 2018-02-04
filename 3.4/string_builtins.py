@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+''' Demonstrating some built-ins for string data type.'''
 
 words = "The Words Of An Eternal Soul Will Remain Forever In Our Hearts."
 
