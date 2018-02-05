@@ -14,4 +14,5 @@ l.reverse()
 print("- reversing list:",l)
 print("- returning first index ocurrence of value 3:",l.index(3))
 print("- count ocurrences of value 4:",l.count(4))
+print("- length of list:",len(l))
 
