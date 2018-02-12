@@ -38,7 +38,6 @@ def create_table_user():
              """.format(table,name,country,username,passhash)
     cursor.execute(insert)
     db.commit()
-    print("\n  * Notice: Table and First User successfully created.\n")
     return None
 
 
@@ -55,8 +54,9 @@ def validate_user_pass(username,password):
     select = "SELECT password FROM '{0}' WHERE username = '{1}';".format(table,username)
     cursor.execute(select)
     db.commit()
-    salt = cursor.fetchone()[0].encode("utf-8")
+    salt = cursor.fetchone()
     if salt is not None:
+        salt = salt[0].encode("utf-8")
         hashsalt = bcrypt.hashpw(password,salt)
         if hashsalt == salt:
             return 0
@@ -70,13 +70,14 @@ if __name__ == "__main__":
     """ When used as script. """
     data = validate_table() # validates if table already exists
     if len(data) == 0:
+        print("\n  * Notice: Table and First User successfully created.\n")
         create_table_user()
-    username = input("Username: ") # proceed with the normal execution
+    username = input("Username: ") # proceeding normal execution
     password = getpass(prompt="Password: ").encode("utf-8")
     validation = validate_user_pass(username,password)
     if validation == 0:
-        print("Username: OK / Password: OK")
+        print("\n  * Username: OK / Password: OK\n")
     elif validation == 1:
-        print("Username: OK / Password: NOK")
+        print("\n  * Username: OK / Password: NOK\n")
     elif validation == 2:
-        print("Username: Not Found!")
+        print("\n  * Username: Not Found!\n")
