@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
+""" Login application written in Python Flask. """
+
 from flask import Flask, session, redirect, render_template, request
+
+__version__ = "1.0"
+__author__  = "ivanleoncz"
+
 import sqlite3db
 
 app = Flask(__name__)
