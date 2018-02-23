@@ -20,7 +20,7 @@ def f_index():
 @app.route("/login", methods=['GET','POST'])
 def f_login():
     if request.method == "GET":
-        return render_template("login.html",status="ok")
+        return render_template("login.html")
     elif request.method == "POST":
         username = request.form['username']
         password = request.form['password'].encode("utf-8")
