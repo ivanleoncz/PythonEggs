@@ -6,6 +6,8 @@ from bson.objectid import ObjectId
 from datetime import datetime
 from pymongo import MongoClient
 
+__author__ = "@ivanleoncz"
+
 
 class Connector:
     """ MongoDB connector and jobs: login, add session and delete session. """
