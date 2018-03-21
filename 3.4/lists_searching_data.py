@@ -2,7 +2,7 @@
 """ Searching data on lists. """
 
 l = ["Python","C++","Java","Cobol","Scala"]
-iprint("List:",l)
+print("List:",l)
 
 # getting indexes from list data
 idx1 = l.index("C++")
