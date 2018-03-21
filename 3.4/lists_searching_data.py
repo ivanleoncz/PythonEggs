@@ -4,7 +4,7 @@
 l = ["Python","C++","Java","Cobol","Scala"]
 print("List:",l)
 
-# getting indexes from list data
+# getting indexes from data
 idx1 = l.index("C++")
 idx2 = l.index("Scala")
 print("Index for C++:   ", idx1)
