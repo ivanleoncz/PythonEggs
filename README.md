@@ -1,2 +1,2 @@
-# python-prototypes
-Applications, Modules, Scripts and Prototypes.
+# python-box
+A collection of exercises, examples and prototypes. 
