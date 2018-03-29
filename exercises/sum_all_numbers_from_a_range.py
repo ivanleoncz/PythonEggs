@@ -11,4 +11,4 @@ while number <= limit:
     total  += number  # increments by the current number
     number += 1       # updates the number for while condition
 
-print("\nSum of all numbers between 1 and {0}: {1}".format(limit,total))
+print("\nSum of all numbers between 1 and {0}: {1}\n".format(limit,total))
