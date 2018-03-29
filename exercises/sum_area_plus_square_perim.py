@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Sums the area and the square of the perimeter of a regular polygon. """
+""" Sums area + square of the perimeter of a regular polygon. """
 
 from math import pi,tan
 
