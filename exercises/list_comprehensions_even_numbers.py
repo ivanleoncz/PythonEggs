@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Maps even numbers from a list of numbers. """
+""" Maps even numbers from a list of numbers, using list comprehension
+with filtering.
+"""
 
 __author__ = "@ivanleoncz"
 
