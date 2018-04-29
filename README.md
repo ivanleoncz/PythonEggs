@@ -1,2 +1,2 @@
-# SnakeNursery
-Creating snakes (Python prototypes).
+# PythonEggs
+Creating snakes (modules, prototypes, exercises).
