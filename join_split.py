@@ -7,7 +7,7 @@ server_conf = {"ServerType":"Proxy", "Country":"JAP", "OS":"Debian"}
 
 for k,v in server_conf.items():
     string = "=".join([k,v])
-    print(string)
-    print(string.split("="),"\n")
+    print(string.split("="))
+    print(string, "\n")
 
 
