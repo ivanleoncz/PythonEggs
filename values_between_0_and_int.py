@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
-s = ""
-n = int(input("Insert an int number:"))
-n += 1
+l = []
 
-for i in range(n):
-    if i != 0:
-        s = s + str(i)
+num = int(input("Insert an int number: "))
 
-print("Number between 0 and the int number: ", s)
+for n in range(1, num):
+    l.append(n)
+
+print("Number between 0 and {0}: {1}".format(num, l))
