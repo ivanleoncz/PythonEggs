@@ -20,6 +20,6 @@ password = getpass(prompt="Please, insert the password: ").encode('utf-8')
 password_unhashed = bcrypt.hashpw(password,password_hashed)
 
 if password_hashed == password_unhashed:
-    print("\nLogin Successful!")
+    print True
 else:
-    print("\nWrong Password!")
+    print False
