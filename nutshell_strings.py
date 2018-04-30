@@ -1,12 +1,16 @@
 #!/usr/bin/python3
-''' Demonstrating Python built-ins for string data type.'''
+""" Strings in a Nutshell. """
 
-words = "The Words Of An Eternal Soul Will Remain Forever In Our Hearts."
+s = "Sweet Home Alabama Festival"
 
-print("\nSTRING:",words)
-print("\n- numbers of ocurrences of the letter w:",words.count("W"))
-print("- print all lowercase:",words.lower())
-print("- print all uppercase:",words.upper())
-print("- split into substrings:",words.split())
-print("- returns index for the first ocurrence of the letter a:",words.find("a"))
-print("- string length:",len(words))
+print("\n",s,"\n")
+print("- string length:\033[1;32m", len(s), "\033[1;m")
+print("- counting letter 'a':\033[1;32m",s.count("a"), "\033[1;m")
+print("- first index for letter 'a':\033[1;32m", s.find("a"), "\033[1;m")
+print("- lowercase:\033[1;32m", s.lower(), "\033[1;m")
+print("- uppercase:\033[1;32m", s.upper(), "\033[1;m")
+print("- split into substrings:\033[1;32m", s.split(), "\033[1;m")
+print("- all alphabetic chars? \033[1;32m", s.isalpha(), "\033[1;m")
+print("- all alphanumeric char? \033[1;32m", s.isalnum(), "\033[1;m")
+print("- all numeric chars? \033[1;32m", s.isdigit(), "\033[1;m")
+
