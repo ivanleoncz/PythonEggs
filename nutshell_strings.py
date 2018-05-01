@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ Strings in a Nutshell. """
 
-s = "Sweet Home Alabama Festival"
+s = "    You can say 'São Francisco', in Portuguese.       "
 
 print("\n",s,"\n")
 print("- string length:\033[1;32m", len(s), "\033[1;m")
-print("- counting letter 'a':\033[1;32m",s.count("a"), "\033[1;m")
+print("- counting letter 'n':\033[1;32m", s.count("a"), "\033[1;m")
+print("- counting string 'an':\033[1;32m", s.count("an"), "\033[1;m")
 print("- first index for letter 'a':\033[1;32m", s.find("a"), "\033[1;m")
 print("- lowercase:\033[1;32m", s.lower(), "\033[1;m")
 print("- uppercase:\033[1;32m", s.upper(), "\033[1;m")
@@ -13,4 +14,18 @@ print("- split into substrings:\033[1;32m", s.split(), "\033[1;m")
 print("- all alphabetic chars? \033[1;32m", s.isalpha(), "\033[1;m")
 print("- all alphanumeric char? \033[1;32m", s.isalnum(), "\033[1;m")
 print("- all numeric chars? \033[1;32m", s.isdigit(), "\033[1;m")
-
+print("- all lowercase? \033[1;32m", s.islower(), "\033[1;m")
+print("- all uppercase? \033[1;32m", s.isupper(), "\033[1;m")
+s_utf8 = s.encode(encoding="utf-8")
+print("- encoded with UTF-8: \033[1;32m", s_utf8, "\033[1;m")
+s_decode = s_utf8.decode(encoding="utf-8")
+print("- decoded with UTF-8: \033[1;32m", s_decode, "\033[1;m")
+print("- endswith 'tuguese.': \033[1;32m", s.endswith("tuguese."), "\033[1;m")
+print("- starting index of 'Por', if exists: \033[1;32m", s.find("Por"), "\033[1;m")
+print("- joining strings with '=' char: \033[1;32m", '='.join(s), "\033[1;m")
+print("- left-justified with char: \033[1;32m", s.ljust(80,"-"), "\033[1;m")
+print("- right-justified with char: \033[1;32m", s.rjust(80,"-"), "\033[1;m")
+print("- remove leading(left) whitespace: \033[1;32m", s.lstrip(), "\033[1;m")
+print("- remove trailling(right) whitespace: \033[1;32m", s.rstrip(), "\033[1;m")
+print("- remove left and right whitespaces: \033[1;32m", s.strip(), "\033[1;m")
+print("- replace string 'São' with 'San': \033[1;32m", s.replace("São","San"), "\033[1;m")
