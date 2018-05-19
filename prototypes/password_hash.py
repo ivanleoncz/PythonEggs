@@ -9,17 +9,40 @@
 import bcrypt
 from getpass import getpass
 
-# hashed password
-salt = bcrypt.gensalt()
-password = "mysecret".encode('utf-8')
-password_hashed = bcrypt.hashpw(password,salt)
 
-# unhashed password
-# plain: the salt value is stored at the beggining of the password hash
-password = getpass(prompt="Please, insert the password: ").encode('utf-8')
-password_unhashed = bcrypt.hashpw(password,password_hashed)
+def hashpass(password):
+    """
+        Concept:
+            Encrypts plain text password into a hash.
 
-if password_hashed == password_unhashed:
-    print True
-else:
-    print False
+        Parameter:
+            password: Plain text password.
+
+        Return:
+            Plain text password encrypted.
+    """
+    salt = bcrypt.gensalt()
+    hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
+    return hashed
+
+
+def validate(password, hashed):
+    """
+        Concept:
+            Validates password, generating a new hash, using the
+            provided hash as salt value and comparing the provided
+            hash VS the new hash.
+
+        Parameters:
+            password: Plain text password.
+            hashed: Generated hash, based on plain text password.
+
+        Return:
+            True: if hashed and new_hash are equal.
+            False: if hashed and new_hash are not equal.
+    """
+    new_hash = bcrypt.hashpw(password.encode('utf-8'), hashed)
+    if hashed == new_hash:
+        return True
+    else:
+        return False
