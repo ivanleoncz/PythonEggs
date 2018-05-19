@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-""" Determining Valid Passwords: plain text VS hashed.
+""" Encrypting and validating passwords."""
 
-    You can use this concept for storing hashed passwords
-    on a DB and later on, making this type of procedure on
-    your code, in order to determine a successful login.
-"""
-
-import bcrypt
 from getpass import getpass
 
+__author__ = "@ivanleoncz"
+
+import bcrypt
 
 def encrypt(p):
     """
