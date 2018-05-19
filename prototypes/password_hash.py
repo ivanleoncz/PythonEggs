@@ -10,23 +10,23 @@ import bcrypt
 from getpass import getpass
 
 
-def hashpass(password):
+def encrypt(p):
     """
         Concept:
             Encrypts plain text password into a hash.
 
         Parameter:
-            password: Plain text password.
+            p: Plain text password.
 
         Return:
             Plain text password encrypted.
     """
     salt = bcrypt.gensalt()
-    hashed = bcrypt.hashpw(password.encode('utf-8'), salt)
+    hashed = bcrypt.hashpw(p.encode('utf-8'), salt)
     return hashed
 
 
-def validate(password, hashed):
+def validate(p, hashed):
     """
         Concept:
             Validates password, generating a new hash, using the
@@ -34,14 +34,14 @@ def validate(password, hashed):
             hash VS the new hash.
 
         Parameters:
-            password: Plain text password.
+            p: Plain text password.
             hashed: Generated hash, based on plain text password.
 
         Return:
             True: if hashed and new_hash are equal.
             False: if hashed and new_hash are not equal.
     """
-    new_hash = bcrypt.hashpw(password.encode('utf-8'), hashed)
+    new_hash = bcrypt.hashpw(p.encode('utf-8'), hashed)
     if hashed == new_hash:
         return True
     else:
