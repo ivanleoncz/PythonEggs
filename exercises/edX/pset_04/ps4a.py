@@ -234,39 +234,56 @@ def playHand(hand, wordList, n):
       n: integer (HAND_SIZE; i.e., hand size required for additional points)
       
     """
-    # BEGIN PSEUDOCODE <-- Remove this comment when you code this function; do your coding within the pseudocode (leaving those comments in-place!)
-    # Keep track of the total score
-    
-    # As long as there are still letters left in the hand:
-    
-        # Display the hand
-        
-        # Ask user for input
-        
-        # If the input is a single period:
-        
-            # End the game (break out of the loop)
+    word = '' # controls the behaviour of the final msg, if user exits
+    total_score = 0
+    hand_dict = hand.copy()
+    while len(hand_dict.keys()) > 0:
+        # processing current hand (there could be more than one),
+        # providing the avaialable letters from hand_dict
+        hand_list = []
+        for l in hand_dict.keys():
+            for i in range(hand_dict[l]):
+                hand_list.append(l)
+        # displaying hand
+        print("Current Hand:", " ".join(hand_list))
+        word = input('Enter word, or a "." to indicate that you are finished: ')
+        # '.' stops the function
+        if word == '.':
+            break
+        else:
+            # word must be contained in wordList
+            if word not in wordList:
+                print("Invalid word, please try again.\n")
+            else:
 
-            
-        # Otherwise (the input is not a single period):
-        
-            # If the word is not valid:
-            
-                # Reject invalid word (print a message followed by a blank line)
+                letter_counter = 0 # how many letters are inside hand_dict
+                hand_letters = list(hand_dict.keys()) # extract keys (letters)
+                # for every letter in word variable...
+                for l in word:
+                    # ... compare it with one of the current keys
+                    for c in hand_letters:
+                        # if current letter is equal to current key
+                        if l == c:
+                            letter_counter += 1 # increase letter_counter
+                            # if current key value is equal to 1...
+                            if hand_dict[c] == 1: 
+                                del hand_dict[c] # ... remove it, or...
+                            else:
+                                hand_dict[c] -= 1 #... decrease it by 1...
+                # at the end of word iteration
+                # if letter_counter is equal to word size...
+                if letter_counter == len(word):
+                    score = getWordScore(word, n) # find the word score
+                    total_score += score # increase total_score with score for current word
+                    print('"', word,'"', "earned", score, "points.","Total:", total_score, "points")
+                else:
+                    print("Invalid word, please try again.\n")
+    if word == ".":
+        print("Goodbye! Total score: ", total_score, " points.")
+    else:
+        print("\nRun out of letters. Total score: ", total_score, " points.")
 
-            # Otherwise (the word is valid):
 
-                # Tell the user how many points the word earned, and the updated total score, in one line followed by a blank line
-                
-                # Update the hand 
-                
-
-    # Game is over (user entered a '.' or ran out of letters), so tell user the total score
-
-
-#
-# Problem #5: Playing a game
-# 
 
 def playGame(wordList):
     """
