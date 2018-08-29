@@ -7,10 +7,7 @@ lower_caesar = lower[:]
 upper = list(string.ascii_uppercase)
 upper_caesar = upper[:]
 
-rotate = input("Number of rotations: ")
-if not rotate.isdigit():
-    raise ValueError("rotate must be 'int'")
-
+rotate = int(input("Number of rotations: "))
 word = input("Word to encrypt: ")
 
 caesar_map = {}
@@ -28,8 +25,11 @@ for k, v in zip(upper, upper_caesar):
     caesar_map[k] = v
 
 caesar_word = ''
-for letter in word:
-    caesar_word += caesar_map[letter]
+for char in word:
+    if char in caesar_map.keys():
+        caesar_word += caesar_map[char]
+    else:
+        caesar_word += char
     
 
 print("Caesar Map:\n{0}".format(dumps(caesar_map, indent=4)))
