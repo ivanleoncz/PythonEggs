@@ -12,8 +12,6 @@ if not rotate.isdigit():
     raise ValueError("rotate must be 'int'")
 
 word = input("Word to encrypt: ")
-if not word.isalpha():
-    raise ValueError("word must be 'str' (no numbers or special chars)")
 
 caesar_map = {}
 
