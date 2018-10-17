@@ -1,3 +1,3 @@
 # PythonEggs
 
-Challenges, exercises, prototypes and modules written in Python.
+Challenges, exercises and prototypes written in Python.
