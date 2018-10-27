@@ -43,3 +43,15 @@ def validate(p, hashed):
         return True
     else:
         return False
+
+"""
+def generate():
+
+    import string
+    import random
+
+    chars = string.ascii_uppercase + string.ascii_lowercase + string.punctuation + string.digits
+    print(chars)
+    print("".join(random.choice(chars) for step in range(10)))
+    print("".join(random.choice(chars) for step in range(10)))
+"""
