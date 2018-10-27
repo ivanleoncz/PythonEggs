@@ -1,4 +1,6 @@
 
+from bson import json_util
+from json import dumps
 from pymongo import MongoClient
 
 class Connector(object):
@@ -25,3 +27,13 @@ class Connector(object):
         return data
 
 
+    def dump_records(self):
+        db = self.client.blog.Users
+        data = db.find({})
+        data = [record for record in data]
+        self.client.close()
+        return dumps(data, indent=2, default=json_util.default)
+
+
+database = Connector()
+print(database.dump_records())
