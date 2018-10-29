@@ -13,9 +13,9 @@ class Connector(object):
         role = input("Role: ")
         try:
             db = self.client.blog.Users
-            db.insert_one({"Name":name, "Role":role})
+            record_id = db.insert({"Name":name, "Role":role})
             self.client.close()
-            return "Done!"
+            return str(record_id)
         except Exception as e:
             return e
 
