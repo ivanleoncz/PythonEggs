@@ -42,7 +42,7 @@ class Connector(object):
             print(" - CreateTime:", data['CreateTime'])
             print(" - UpdateTime:", data['UpdateTime'])
         else:
-            print("No Record Was Found!")
+            print("User Not Found!")
 
 
     def read_all_records(self, dump=False):
@@ -55,6 +55,24 @@ class Connector(object):
                 print(record)
         elif dump is True:
             print(dumps(data, indent=2, default=json_util.default))
+
+
+    def update_record(self):
+        name = input("\nName: ")
+        db = self.client.blog.Users
+        data = db.find_one({"Name":name})
+        if data is not None:
+            for k,v in data.items():
+                print("- ",(k,v))
+            new_name = input("\nNew Name:")
+            new_role = input("New Role:")
+            data = db.update_one({"Name":name},
+                                 {"$set":{"Name":new_name, "Role":new_role}})
+            self.client.close()
+            print("Done!")
+        else:
+            self.client.close()
+            print("User Not Found")
 
 
     def delete_record(self):
@@ -97,6 +115,8 @@ while True:
         print(database.create_record())
     elif opt == 2:
         database.read_record()
+    elif opt == 3:
+        database.update_record()
     elif opt == 4:
         database.delete_record()
     elif opt == 5:
