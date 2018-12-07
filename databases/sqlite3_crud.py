@@ -5,7 +5,7 @@ import sqlite3
 class Crud:
 
     def __init__(self):
-        self.conn = sqlite3.connect("crud_db.sqlite3")
+        self.conn = sqlite3.connect("sqlite3_crud.sqlite3")
 
 
     def build(self):
