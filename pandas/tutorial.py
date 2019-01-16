@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 #
 countries = ["Brazil", "Germany", "Egypt", "China", "Uruguay", "Sudan", "Congo"]
 s = pd.Series(countries)
-print(s)
+print("\nSeries:\n",s)
 
 # DATES as indexes.
 #
@@ -18,4 +18,6 @@ letters = ['A', 'B', 'C', 'D']
 
 # index attribute is flexible, 
 df = pd.DataFrame(np.random.randn(7, 4), index=countries, columns=years)
-print("\n", df)
+print("\n\nDataFrame - all data:\n", df)
+print("\n\nDataFrame - head (2) of data:\n", df.head(2))
+print("\n\nDataFrame - tail (4) of data:\n", df.tail(4))
