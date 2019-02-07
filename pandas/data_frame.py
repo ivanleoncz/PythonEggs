@@ -13,5 +13,14 @@ cities = [
 
 df = pd.DataFrame(cities, columns = ["City", "State", "Country"])
 df.index += 1
+
+print("Simple DataFrame:\n")
 print(df)
 
+print("\nUpdating Row Label 3 / Column Label 'City':\n")
+df.at[4, "City"] = "Itupeva"
+print(df)
+
+print("\nUpdating Row Index 1 / Column Integer 0:\n")
+df.iat[1, 0] = "Xalapa-Enríquez"
+print(df)
