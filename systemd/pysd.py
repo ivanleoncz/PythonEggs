@@ -7,6 +7,10 @@ import re
 import subprocess
 
 
+__author__ = "ivanleoncz"
+__version__ = "1.0"
+
+
 class Systemd():
     """ Main class for Systemd tasks. """
 
