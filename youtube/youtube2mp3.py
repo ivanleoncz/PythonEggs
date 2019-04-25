@@ -42,4 +42,3 @@ while True:
         break
     elif move == "n":
         break
-        
